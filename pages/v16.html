@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yijin Wang</title>
+  <link rel="stylesheet" href="../styles/v16.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <header class="nav">
+    <div class="nav-inner">
+      <span class="nav-name">Yijin Wang</span>
+      <nav class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="nav-resume">Résumé ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero panel">
+      <div class="col-left">
+        <p class="hero-name-sm">Yijin Wang</p>
+        <p class="hero-location">Pittsburgh, PA</p>
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          Available
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="hero-heading">
+          Systems, machine learning,<br>
+          and the math underneath.
+        </h1>
+        <p class="hero-bio">
+          CS student at Carnegie Mellon working at the intersection of
+          machine learning, quantitative research, and systems engineering.
+          I've shipped research and production systems at Citadel Securities,
+          CMU SCS, and Jane Street.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#work">View selected work</a>
+          <a class="btn-ghost"   href="#contact">Get in touch</a>
+        </div>
+        <ul class="hero-pills">
+          <li>Machine Learning</li>
+          <li>Systems</li>
+          <li>Quant Research</li>
+          <li>CMU</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══ WORK ══ -->
+    <section class="section" id="work">
+
+      <div class="section-label-row panel">
+        <div class="col-left">
+          <span class="section-label">Selected work</span>
+        </div>
+        <div class="col-right">
+          <p class="section-intro">
+            Three roles across quant, ML research, and systems engineering —
+            each in a demanding, high-stakes environment.
+          </p>
+        </div>
+      </div>
+
+      <div class="work-item panel">
+        <div class="col-left">
+          <span class="work-year">2025</span>
+          <span class="work-type">Quant Research</span>
+        </div>
+        <div class="col-right">
+          <h3 class="work-company">Citadel Securities</h3>
+          <p class="work-role">Quantitative Research Intern</p>
+          <p class="work-desc">
+            Built signal generation pipelines and backtesting infrastructure
+            for equity strategies. Worked across the full research cycle —
+            hypothesis formation, implementation, and performance attribution.
+          </p>
+        </div>
+      </div>
+
+      <div class="work-item panel">
+        <div class="col-left">
+          <span class="work-year">2024–25</span>
+          <span class="work-type">ML Research</span>
+        </div>
+        <div class="col-right">
+          <h3 class="work-company">CMU School of Computer Science</h3>
+          <p class="work-role">ML Research Assistant</p>
+          <p class="work-desc">
+            Researched efficient fine-tuning methods for large language models
+            under constrained compute. Focused on parameter-efficient adaptation
+            techniques and their scaling behaviour.
+          </p>
+        </div>
+      </div>
+
+      <div class="work-item panel">
+        <div class="col-left">
+          <span class="work-year">2024</span>
+          <span class="work-type">Systems</span>
+        </div>
+        <div class="col-right">
+          <h3 class="work-company">Jane Street</h3>
+          <p class="work-role">Software Engineering Intern</p>
+          <p class="work-desc">
+            Worked on distributed systems infrastructure for low-latency
+            trading pipelines. Emphasis on correctness guarantees and
+            measurable performance under production conditions.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══ PROJECTS ══
+         This section breaks from the panel system:
+         the label row still uses the two-column grid,
+         but the cards span the full content width.     -->
+    <section class="section section-tinted" id="projects">
+
+      <div class="section-label-row panel">
+        <div class="col-left">
+          <span class="section-label">Projects</span>
+        </div>
+        <div class="col-right">
+          <p class="section-intro">
+            Independent work in compilers, systematic trading,
+            and distributed systems.
+          </p>
+        </div>
+      </div>
+
+      <!-- Cards: offset to align left edge with right column -->
+      <div class="proj-cards-wrap">
+        <div class="proj-cards">
+
+          <article class="proj-card">
+            <div class="proj-card-top">
+              <span class="proj-num">01</span>
+              <span class="proj-tag">OCaml</span>
+            </div>
+            <h3 class="proj-name">Compiler</h3>
+            <p class="proj-desc">
+              A compiler for a statically typed ML-like language targeting
+              x86-64 assembly. Hand-written lexer, parser, type checker,
+              and native code generator.
+            </p>
+            <div class="proj-card-foot">
+              <span class="proj-foot-label">Language design &middot; Codegen</span>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-card-top">
+              <span class="proj-num">02</span>
+              <span class="proj-tag">Python</span>
+            </div>
+            <h3 class="proj-name">Alpha Lab</h3>
+            <p class="proj-desc">
+              Systematic research framework for testing momentum and
+              mean-reversion hypotheses on crypto futures. Walk-forward
+              validation with realistic cost modelling.
+            </p>
+            <div class="proj-card-foot">
+              <span class="proj-foot-label">Quant research &middot; Backtesting</span>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-card-top">
+              <span class="proj-num">03</span>
+              <span class="proj-tag">Rust</span>
+            </div>
+            <h3 class="proj-name">Netflow</h3>
+            <p class="proj-desc">
+              Distributed message broker built from scratch with a custom
+              Raft-based consensus layer for fault tolerance and
+              exactly-once delivery.
+            </p>
+            <div class="proj-card-foot">
+              <span class="proj-foot-label">Distributed systems &middot; Consensus</span>
+            </div>
+          </article>
+
+          <article class="proj-card proj-card-wide">
+            <div class="proj-card-top">
+              <span class="proj-num">04</span>
+              <span class="proj-tag">PyTorch</span>
+            </div>
+            <h3 class="proj-name">LLM Fine-tune Research</h3>
+            <p class="proj-desc">
+              Benchmarked parameter-efficient fine-tuning techniques (LoRA,
+              prefix tuning, adapters) across model sizes and compute budgets.
+              Work conducted as part of CMU SCS research.
+            </p>
+            <div class="proj-card-foot">
+              <span class="proj-foot-label">Machine learning &middot; NLP &middot; Research</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section class="section" id="contact">
+
+      <div class="section-label-row panel">
+        <div class="col-left">
+          <span class="section-label">Contact</span>
+        </div>
+        <div class="col-right">
+          <h2 class="contact-heading">
+            Let's work on something worth building.
+          </h2>
+        </div>
+      </div>
+
+      <div class="contact-body panel">
+        <div class="col-left">
+          <p class="contact-note">
+            Open to research collaborations, internships, and conversations
+            about hard problems in ML and systems.
+          </p>
+          <a class="btn-primary" href="mailto:yijin@example.com">Send an email</a>
+        </div>
+        <div class="col-right">
+          <ul class="contact-list">
+            <li>
+              <span class="cl-key">Email</span>
+              <a href="mailto:yijin@example.com">yijin@example.com</a>
+            </li>
+            <li>
+              <span class="cl-key">GitHub</span>
+              <a href="#">github.com/yijinwang</a>
+            </li>
+            <li>
+              <span class="cl-key">LinkedIn</span>
+              <a href="#">linkedin.com/in/yijinwang</a>
+            </li>
+            <li>
+              <span class="cl-key">Résumé</span>
+              <a href="#">Download PDF ↗</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer panel">
+    <div class="col-left">
+      <span class="footer-name">Yijin Wang</span>
+    </div>
+    <div class="col-right footer-right">
+      <span>© 2026</span>
+      <span>Pittsburgh, PA</span>
+    </div>
+  </footer>
+
+</body>
+</html>

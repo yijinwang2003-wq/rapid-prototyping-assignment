@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yijin Wang</title>
+  <link rel="stylesheet" href="../styles/v13.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <span class="nav-name">Yijin Wang</span>
+      <nav class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="nav-resume">Résumé ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="wrap">
+
+      <div class="hero-meta">
+        <span class="status-dot"></span>
+        <span>Open to opportunities &mdash; Pittsburgh, PA</span>
+      </div>
+
+      <div class="hero-grid">
+        <h1 class="hero-heading">
+          Systems, machine learning,<br>
+          and the math underneath.
+        </h1>
+        <div class="hero-sidebar">
+          <p class="hero-bio">
+            I'm Yijin Wang, a CS student at Carnegie Mellon. I've worked on
+            quantitative research at Citadel, ML systems at CMU, and trading
+            infrastructure at Jane Street.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn-primary" href="#work">View selected work</a>
+            <a class="btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-disciplines">
+        <span>Machine Learning</span>
+        <span class="bull">&bull;</span>
+        <span>Systems Engineering</span>
+        <span class="bull">&bull;</span>
+        <span>Quantitative Research</span>
+        <span class="bull">&bull;</span>
+        <span>Carnegie Mellon University</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SELECTED WORK ── -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <h2 class="section-heading">Selected work</h2>
+
+      <div class="work-list">
+
+        <div class="work-item">
+          <div class="work-left">
+            <h3 class="work-company">Citadel Securities</h3>
+            <p class="work-role">Quantitative Research Intern &middot; Summer 2025</p>
+          </div>
+          <p class="work-detail">
+            Built signal generation pipelines and backtesting infrastructure
+            for equity strategies. Worked across the full research cycle from
+            hypothesis to deployment.
+          </p>
+        </div>
+
+        <div class="work-item">
+          <div class="work-left">
+            <h3 class="work-company">CMU School of Computer Science</h3>
+            <p class="work-role">ML Research Assistant &middot; 2024&ndash;2025</p>
+          </div>
+          <p class="work-detail">
+            Investigated efficient fine-tuning methods for large language
+            models under constrained compute budgets. Research focused on
+            parameter-efficient adaptation at scale.
+          </p>
+        </div>
+
+        <div class="work-item">
+          <div class="work-left">
+            <h3 class="work-company">Jane Street</h3>
+            <p class="work-role">Software Engineering Intern &middot; Summer 2024</p>
+          </div>
+          <p class="work-detail">
+            Contributed to distributed systems infrastructure underlying
+            low-latency trading pipelines. Emphasis on correctness and
+            measurable performance under production load.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="section section-ruled" id="projects">
+    <div class="wrap">
+      <h2 class="section-heading">Projects</h2>
+
+      <div class="proj-grid">
+
+        <div class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">Compiler</h3>
+            <span class="proj-lang">OCaml</span>
+          </div>
+          <p class="proj-body">
+            A compiler for a statically typed ML-like language targeting
+            x86-64 assembly. Hand-written lexer, parser, type checker,
+            and code generator.
+          </p>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">Alpha Lab</h3>
+            <span class="proj-lang">Python</span>
+          </div>
+          <p class="proj-body">
+            Systematic research framework for momentum and mean-reversion
+            hypotheses on cryptocurrency futures, with walk-forward
+            validation and realistic cost modelling.
+          </p>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-top">
+            <h3 class="proj-title">Netflow</h3>
+            <span class="proj-lang">Rust</span>
+          </div>
+          <p class="proj-body">
+            Distributed message broker built from scratch with a custom
+            Raft-based consensus layer for fault tolerance and
+            exactly-once delivery.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="section" id="contact">
+    <div class="wrap contact-wrap">
+
+      <div class="contact-left">
+        <h2 class="section-heading">Get in touch</h2>
+        <p class="contact-body">
+          I'm always happy to talk about research, interesting engineering
+          problems, or opportunities. Feel free to reach out through any
+          of the links here.
+        </p>
+        <a class="btn-primary" href="mailto:yijin@example.com">
+          Send an email
+        </a>
+      </div>
+
+      <ul class="contact-links">
+        <li>
+          <span class="cl-key">Email</span>
+          <a href="mailto:yijin@example.com">yijin@example.com</a>
+        </li>
+        <li>
+          <span class="cl-key">GitHub</span>
+          <a href="#">github.com/yijinwang</a>
+        </li>
+        <li>
+          <span class="cl-key">LinkedIn</span>
+          <a href="#">linkedin.com/in/yijinwang</a>
+        </li>
+        <li>
+          <span class="cl-key">Résumé</span>
+          <a href="#">Download PDF ↗</a>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Yijin Wang</span>
+      <span>Pittsburgh, PA</span>
+    </div>
+  </footer>
+
+</body>
+</html>
