@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yijin Wang — v08</title>
+  <link rel="stylesheet" href="../styles/v08.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo">Yijin Wang</span>
+      <div class="nav-links">
+        <a href="#features">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Get in touch →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <span class="dot"></span> Open to new opportunities
+      </div>
+      <h1 class="hero-headline">
+        Building systems at the intersection of
+        <span class="accent">ML and quant.</span>
+      </h1>
+      <p class="hero-sub">
+        I'm Yijin Wang — a CS student at CMU who ships fast, thinks rigorously,
+        and loves problems where math meets engineering.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View my work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">internships</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">4+</span>
+          <span class="stat-label">shipped projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">2</span>
+          <span class="stat-label">research papers</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-card">
+        <div class="code-bar">
+          <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
+          <span class="code-filename">portfolio.py</span>
+        </div>
+        <pre class="code-block"><span class="c-kw">class</span> <span class="c-cl">YijinWang</span>:
+    focus  = [<span class="c-str">"ML"</span>, <span class="c-str">"systems"</span>, <span class="c-str">"quant"</span>]
+    school = <span class="c-str">"CMU"</span>
+    status = <span class="c-str">"available"</span>
+
+    <span class="c-kw">def</span> <span class="c-fn">build</span>(self, problem):
+        <span class="c-kw">return</span> fast_and_rigorous(
+            problem, depth=<span class="c-str">"max"</span>
+        )</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES / WORK ── -->
+  <section class="features" id="features">
+    <div class="section-inner">
+      <div class="section-label">Experience</div>
+      <h2 class="section-heading">Where I've shipped real work.</h2>
+      <p class="section-sub">
+        From high-frequency trading infrastructure to ML research — I've worked across
+        the stack in demanding environments.
+      </p>
+
+      <div class="feature-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon icon-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Citadel Securities</h3>
+          <p class="feature-role">Quantitative Research Intern · Summer 2025</p>
+          <p>Built signal generation pipelines and backtesting infrastructure for equity strategies.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon icon-indigo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h3>CMU SCS</h3>
+          <p class="feature-role">ML Research Assistant · 2024 – 2025</p>
+          <p>Researched efficient fine-tuning methods for large language models under tight compute constraints.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon icon-sky">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Jane Street</h3>
+          <p class="feature-role">Software Engineering Intern · Summer 2024</p>
+          <p>Designed and optimised distributed systems infrastructure for low-latency trading pipelines.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="projects" id="projects">
+    <div class="section-inner">
+      <div class="section-label">Projects</div>
+      <h2 class="section-heading">Things I've built from scratch.</h2>
+
+      <div class="project-table">
+
+        <div class="pt-header">
+          <span>Project</span>
+          <span>Description</span>
+          <span>Stack</span>
+        </div>
+
+        <div class="pt-row">
+          <span class="pt-name">compiler/</span>
+          <span class="pt-desc">Compiler for a statically typed ML-like language, targeting x86-64 assembly</span>
+          <span class="pt-stack">OCaml</span>
+        </div>
+
+        <div class="pt-row">
+          <span class="pt-name">alpha-lab/</span>
+          <span class="pt-desc">Research into momentum and mean-reversion strategies on crypto futures markets</span>
+          <span class="pt-stack">Python</span>
+        </div>
+
+        <div class="pt-row">
+          <span class="pt-name">netflow/</span>
+          <span class="pt-desc">Distributed message broker with a custom consensus layer for fault tolerance</span>
+          <span class="pt-stack">Rust</span>
+        </div>
+
+        <div class="pt-row">
+          <span class="pt-name">llm-finetune/</span>
+          <span class="pt-desc">Efficient LLM adaptation techniques benchmarked across compute budgets</span>
+          <span class="pt-stack">PyTorch</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="contact-left">
+        <div class="section-label">Contact</div>
+        <h2 class="section-heading">Let's build something together.</h2>
+        <p class="section-sub">
+          Whether it's a research collaboration, internship, or just a conversation —
+          I'm always happy to connect.
+        </p>
+        <a class="btn btn-primary" href="mailto:yijin@example.com">Send me an email →</a>
+      </div>
+      <div class="contact-right">
+        <div class="contact-link-list">
+          <a class="clink" href="mailto:yijin@example.com">
+            <span class="clink-label">Email</span>
+            <span class="clink-value">yijin@example.com</span>
+          </a>
+          <a class="clink" href="#">
+            <span class="clink-label">GitHub</span>
+            <span class="clink-value">github.com/yijinwang</span>
+          </a>
+          <a class="clink" href="#">
+            <span class="clink-label">LinkedIn</span>
+            <span class="clink-value">linkedin.com/in/yijinwang</span>
+          </a>
+          <a class="clink" href="#">
+            <span class="clink-label">Resume</span>
+            <span class="clink-value">Download PDF →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="nav-logo">Yijin Wang</span>
+      <span class="footer-copy">© 2026 · Built with pure HTML &amp; CSS</span>
+    </div>
+  </footer>
+
+</body>
+</html>
