@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #00ff41;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.terminal {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.boot-line {
+  color: #005f1a;
+  font-size: 12px;
+  margin-bottom: 0.2rem;
+}
+
+.name-display {
+  margin: 1.8rem 0 0.5rem;
+  color: #00ff41;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.tagline {
+  color: #00b32d;
+  font-size: 13px;
+  margin-bottom: 0.3rem;
+}
+
+.tagline::before {
+  content: '> ';
+  color: #005f1a;
+}
+
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 1em;
+  background-color: #00ff41;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.divider {
+  border: none;
+  border-top: 1px dashed #002b0d;
+  margin: 2rem 0;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section-header {
+  color: #00ff41;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-header::before {
+  content: '[ ';
+  color: #005f1a;
+}
+
+.section-header::after {
+  content: ' ]';
+  color: #005f1a;
+}
+
+.entry {
+  margin-bottom: 1.4rem;
+  padding-left: 1.4rem;
+  border-left: 2px solid #003d10;
+}
+
+.entry-title {
+  color: #00ff41;
+  font-weight: bold;
+}
+
+.entry-meta {
+  color: #00802b;
+  font-size: 12px;
+  margin-bottom: 0.25rem;
+}
+
+.entry-meta::before {
+  content: '@ ';
+  color: #004d14;
+}
+
+.entry-desc {
+  color: #007a26;
+  font-size: 13px;
+}
+
+.contact-line {
+  margin-bottom: 0.7rem;
+  color: #00b32d;
+}
+
+.contact-line .label {
+  color: #004d14;
+  min-width: 90px;
+  display: inline-block;
+}
+
+.contact-line a {
+  color: #00ff41;
+  text-decoration: none;
+}
+
+.contact-line a:hover {
+  text-decoration: underline;
+  color: #66ff99;
+}
+
+.footer {
+  margin-top: 3rem;
+  color: #003d10;
+  font-size: 12px;
+  border-top: 1px solid #001a07;
+  padding-top: 1rem;
+}
+
+.prompt-line {
+  color: #004d14;
+  margin-top: 1.5rem;
+}
+
+.prompt-line::before {
+  content: '$ ';
+  color: #003d10;
+}

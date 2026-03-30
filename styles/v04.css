@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #f5f4f2;
+  color: #2c2c2c;
+}
+
+.container {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+.name {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.3;
+  font-weight: 500;
+  margin: 10px 0 20px;
+}
+
+.intro {
+  font-size: 18px;
+  color: #666;
+  max-width: 500px;
+}
+
+.projects {
+  margin-top: 60px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  margin: 0 0 5px;
+  font-weight: 500;
+}
+
+.card p {
+  margin: 0;
+  color: #777;
+}
