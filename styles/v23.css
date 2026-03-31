@@ -1,0 +1,561 @@
+/* ─────────────────────────────────────────
+   v23 — Project section layout refinement
+
+   Seven changes over v22, all scoped to the
+   project section. No changes elsewhere.
+
+   Audit of v22 project section issues:
+
+   1. proj-grid layout  3-col all-equal → alternating wide
+      Cards 01+04 now span 2 cols each, 02+03
+      fill 1 col each. Diagonal rhythm replaces
+      the lopsided empty cell at the bottom-right.
+
+   2. proj-grid column-gap / row-gap  12px → 16px / 20px
+      Unified gap treated columns and rows the
+      same. More row-gap (20px) than column-gap
+      (16px) groups cards within a row visually.
+
+   3. card-num color  --i5 → --i4
+      Index numbers were too faint to scan.
+      --i4 makes them readable without dominance.
+
+   4. card-num font-size  11px → 12px
+      Matches eyebrow legibility (also 11px in v21);
+      consistent with the smallest readable size.
+
+   5. card-tag padding  2px 8px → 3px 10px
+      Tag pill was undersized next to the larger
+      card-num; 3px/10px feels balanced and clear.
+
+   6. proj-card gap  var(--s2) → var(--s3)
+      16px between card elements was cramped;
+      24px gives each element room to read.
+
+   7. proj-count label  new element in section header
+      A small "4 projects" count anchors the grid
+      to its section intro and aids orientation.
+
+   Everything outside the project section is
+   unchanged from v22.
+───────────────────────────────────────── */
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Tokens ── */
+:root {
+  --serif:   Georgia, 'Times New Roman', serif;
+  --sans:    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --mono:    'Courier New', Courier, monospace;
+
+  --i1: #0f0f0f;
+  --i2: #383838;
+  --i3: #686868;
+  --i4: #989898;
+  --i5: #c8c8c8;
+
+  --bg:      #fdfdfd;
+  --bg-soft: #f5f4f0;
+  --bg-card: #ffffff;
+  --rule:    #eaeaea;
+
+  --lw:  192px;
+  --lg:   64px;
+  --max: 980px;
+  --px:   44px;
+
+  --s1:  8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 48px;
+  --s6: 64px;
+  --s7: 88px;
+}
+
+/* ── Base ── */
+html {
+  background: var(--bg);
+  color: var(--i2);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { font-family: var(--sans); }
+
+a {
+  color: var(--i1);
+  text-decoration: none;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--px);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: var(--lw) 1fr;
+  column-gap: var(--lg);
+  align-items: start;
+}
+
+/* ── NAV ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(253,253,253,0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-inner {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-name {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--i1);
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: var(--i4);
+  transition: color 0.12s;
+  text-underline-offset: 4px;
+}
+
+.nav-links a:hover {
+  color: var(--i1);
+  text-decoration: underline;
+  text-decoration-color: var(--i5);
+}
+
+.nav-cta {
+  font-weight: 600;
+  color: var(--i1) !important;
+}
+
+.nav-cta:hover {
+  text-decoration: underline !important;
+  text-decoration-color: var(--i4) !important;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 11px 22px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: opacity 0.12s, border-color 0.12s, transform 0.12s, box-shadow 0.12s, background 0.12s;
+}
+
+.btn-dark { background: var(--i1); color: var(--bg); }
+.btn-dark:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+}
+
+.btn-light { background: transparent; color: var(--i2); border: 1px solid var(--i5); }
+.btn-light:hover {
+  background: var(--bg-soft);
+  border-color: var(--i3);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+/* ── HERO ── */
+.hero {
+  padding-block: 96px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 6px;
+}
+
+.meta-name {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--i1);
+}
+
+.meta-location {
+  font-size: 12px;
+  color: var(--i4);
+  margin-bottom: var(--s2);
+}
+
+.meta-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--i3);
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+  flex-shrink: 0;
+  animation: blink 2.6s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3.8vw, 50px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--i1);
+  margin-bottom: var(--s3);
+}
+
+.hero-bio {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--i3);
+  max-width: 480px;
+  margin-bottom: var(--s4);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: var(--s4);
+}
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--rule);
+}
+
+.tag-list li {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--i4);
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: border-color 0.12s, color 0.12s;
+}
+
+.tag-list li:hover {
+  border-color: var(--i4);
+  color: var(--i2);
+}
+
+/* ── SECTION SHELL ── */
+.section { border-bottom: 1px solid var(--rule); }
+.section-tinted { background: var(--bg-soft); }
+
+.section-header {
+  padding-top: 72px;
+  padding-bottom: var(--s4);
+}
+
+.eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--i5);
+  padding-top: 6px;
+}
+
+.section-lead {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--i3);
+  max-width: 480px;
+}
+
+/* ── WORK ── */
+.work-list {
+  padding-bottom: var(--s6);
+}
+
+.work-row {
+  padding-block: var(--s5);
+  border-top: 1px solid var(--rule);
+  transition: background 0.12s;
+}
+
+.work-row:hover {
+  background: var(--bg-soft);
+}
+
+.work-row:last-child { border-bottom: 1px solid var(--rule); }
+
+.work-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 6px;
+}
+
+.work-year {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--i4);
+}
+
+.work-domain {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--i5);
+}
+
+.work-co {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--i1);
+  margin-bottom: var(--s1);
+}
+
+.work-title {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--i3);
+  margin-bottom: var(--s3);
+}
+
+.body-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--i2);
+  max-width: 480px;
+}
+
+/* ── PROJECTS ── */
+
+/* ← new: wraps section-lead + count so both align under the eyebrow */
+.section-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+/* ← new: "4 projects" count label anchors the grid to the section intro */
+.proj-count {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--i5);
+}
+
+.proj-grid {
+  display: grid;
+  margin-left: calc(var(--lw) + var(--lg));
+  grid-template-columns: repeat(3, 1fr);
+  /* ← was 12px unified; rows now breathe more than columns */
+  column-gap: 16px;
+  row-gap: 20px;
+  padding-bottom: var(--s6);
+}
+
+/* ← cards 01 and 04 each span 2 cols — alternating diagonal rhythm */
+.proj-card-wide { grid-column: span 2; }
+
+.proj-card {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--i1);
+  border-radius: 0 0 6px 6px;
+  padding: var(--s4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3); /* ← was s2 (16px); 24px gives each element room to read */
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.proj-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-num {
+  font-size: 12px; /* ← was 11px; matches eyebrow legibility */
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--i4); /* ← was --i5; more readable index number */
+  font-variant-numeric: tabular-nums;
+}
+
+.card-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--i3);
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  padding: 3px 10px; /* ← was 2px 8px; more balanced next to larger card-num */
+  border-radius: 4px;
+}
+
+.card-name {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--i1);
+  line-height: 1.2;
+  margin-top: 4px;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--i2);
+  flex: 1;
+}
+
+.card-footer {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--i5);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--rule);
+  margin-top: auto;
+}
+
+/* ── CONTACT ── */
+.contact-h2 {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--i1);
+}
+
+.contact-body {
+  padding-top: var(--s3);
+  padding-bottom: 80px;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.contact-left .body-text { color: var(--i3); }
+
+.link-list { list-style: none; }
+
+.link-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s2);
+  padding-block: var(--s2);
+  border-bottom: 1px solid var(--rule);
+}
+
+.link-list li:first-child { border-top: 1px solid var(--rule); }
+
+.link-key {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--i5);
+  flex-shrink: 0;
+}
+
+.link-list a {
+  font-size: 13px;
+  color: var(--i2);
+  transition: color 0.12s;
+  text-underline-offset: 3px;
+}
+
+.link-list a:hover {
+  color: var(--i1);
+  text-decoration: underline;
+  text-decoration-color: var(--i4);
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  padding-block: var(--s4);
+  border-top: 1px solid var(--rule);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-name {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--i4);
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--i4);
+  letter-spacing: 0.02em;
+}
